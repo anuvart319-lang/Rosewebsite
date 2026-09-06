@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Rose Petal Milk | A Little Luxury in Every Sip</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+  <!-- Google Fonts: Playfair Display, Manrope, Libre Caslon Text, Plus Jakarta Sans, Material Symbols -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:ital,wght@0,400;0,600;1,400&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    rel="stylesheet">
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Tailwind Configuration -->
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "primary-fixed": "#ffdadc",
+            "tertiary-fixed-dim": "#e9c349",
+            "outline": "#847374",
+            "primary-container": "#e8a2a8",
+            "on-primary-container": "#6a373d",
+            "primary": "#874e54",
+            "on-tertiary-container": "#574400",
+            "surface-tint": "#874e54",
+            "on-surface": "#1c1c18",
+            "on-secondary-container": "#7b383f",
+            "on-surface-variant": "#524344",
+            "on-secondary-fixed": "#3b0710",
+            "error": "#ba1a1a",
+            "secondary-fixed": "#ffdadb",
+            "primary-fixed-dim": "#fcb4ba",
+            "tertiary-fixed": "#ffe088",
+            "error-container": "#ffdad6",
+            "on-error-container": "#93000a",
+            "surface-bright": "#fdf9f3",
+            "background": "#fdf9f3",
+            "on-primary-fixed": "#360d14",
+            "secondary-fixed-dim": "#ffb2b7",
+            "outline-variant": "#d6c2c2",
+            "surface": "#fdf9f3",
+            "tertiary-container": "#d6b139",
+            "inverse-primary": "#fcb4ba",
+            "on-primary-fixed-variant": "#6b373d",
+            "on-tertiary-fixed": "#241a00",
+            "on-secondary": "#ffffff",
+            "inverse-on-surface": "#f4f0ea",
+            "tertiary": "#735c00",
+            "on-primary": "#ffffff",
+            "surface-container-high": "#ebe8e2",
+            "inverse-surface": "#31302d",
+            "on-secondary-fixed-variant": "#733239",
+            "on-error": "#ffffff",
+            "surface-container": "#f1ede7",
+            "on-tertiary-fixed-variant": "#574500",
+            "secondary-container": "#ffa6ac",
+            "surface-variant": "#e6e2dc",
+            "surface-container-highest": "#e6e2dc",
+            "on-tertiary": "#ffffff",
+            "on-background": "#1c1c18",
+            "surface-dim": "#dddad4",
+            "secondary": "#904950",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-low": "#f7f3ed"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "container-max": "1280px",
+            "section-gap": "120px",
+            "gutter": "24px",
+            "margin-mobile": "20px",
+            "margin-desktop": "64px",
+            "unit": "8px"
+          },
+          "fontFamily": {
+            "display-lg": ["Playfair Display", "Libre Caslon Text", "serif"],
+            "display-lg-mobile": ["Playfair Display", "Libre Caslon Text", "serif"],
+            "label-sm": ["Manrope", "Plus Jakarta Sans", "sans-serif"],
+            "body-md": ["Manrope", "Plus Jakarta Sans", "sans-serif"],
+            "headline-md": ["Playfair Display", "Libre Caslon Text", "serif"],
+            "headline-sm": ["Playfair Display", "Libre Caslon Text", "serif"],
+            "body-lg": ["Manrope", "Plus Jakarta Sans", "sans-serif"]
+          },
+          "fontSize": {
+            "display-lg": ["64px", { "lineHeight": "72px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "display-lg-mobile": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+            "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.1em", "fontWeight": "600" }],
+            "body-md": ["16px", { "lineHeight": "24px", "letterSpacing": "0.02em", "fontWeight": "400" }],
+            "headline-md": ["32px", { "lineHeight": "40px", "fontWeight": "600" }],
+            "headline-sm": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+            "body-lg": ["18px", { "lineHeight": "28px", "letterSpacing": "0.03em", "fontWeight": "400" }]
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
+    }
+
+    .fill-icon {
+      font-variation-settings: 'FILL' 1, 'wght' 200, 'GRAD' 0, 'opsz' 24;
+    }
+
+    .animate-fade-in-up {
+      animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .delay-100 {
+      animation-delay: 100ms;
+    }
+
+    .delay-200 {
+      animation-delay: 200ms;
+    }
+
+    .delay-300 {
+      animation-delay: 300ms;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-background text-on-background font-body-md antialiased overflow-x-hidden theme-rose">
+
+  <!-- Preloader Screen -->
+  <div id="preloader" class="preloader">
+    <div class="preloader-content">
+      <div class="preloader-bottle-icon">
+        <i class="fa-solid fa-seedling spin-slow"></i>
+      </div>
+      <h2 class="preloader-brand">Rose Petal Milk</h2>
+      <p class="preloader-tagline">A Little Luxury in Every Sip...</p>
+      <div class="preloader-bar-wrap">
+        <div id="preloaderBar" class="preloader-bar"></div>
+      </div>
+      <div class="preloader-stats">
+        <span id="preloaderPercent">0%</span>
+        <span id="preloaderFrames">0 / 300 Frames</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ambient Particle Background Canvas -->
+  <canvas id="particlesCanvas" class="particles-canvas"></canvas>
+
+  <!-- Navigation Header -->
+  <header id="mainNav" class="navbar">
+    <div class="nav-container">
+      <a href="#experience" class="brand-logo" id="logoLink">
+        <span class="logo-symbol">🌸</span>
+        <span class="logo-text">Rose Petal<span class="logo-accent">Milk</span></span>
+      </a>
+
+      <nav class="nav-links" id="mainNavLinks">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#product" class="nav-link">Shop</a>
+        <a href="#experience-lifestyle" class="nav-link">Rituals</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button id="soundToggleBtn" class="action-btn icon-btn" title="Toggle Ambient Soundscape"
+          aria-label="Toggle Sound">
+          <i class="fa-solid fa-volume-xmark" id="soundIcon"></i>
+          <span class="sound-wave-bars">
+            <span></span><span></span><span></span>
+          </span>
+        </button>
+
+        <button id="themeToggleBtn" class="action-btn icon-btn" title="Switch Atmosphere Theme"
+          aria-label="Switch Theme">
+          <i class="fa-solid fa-moon" id="themeIcon"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Scroll Animation Experience Section -->
+  <main id="experience" class="scroll-experience">
+    <!-- Sticky Canvas & Viewport Container -->
+    <div class="sticky-container">
+
+      <!-- Sequence Canvas with Responsive Center Fitting -->
+      <div class="canvas-wrapper">
+        <canvas id="sequenceCanvas" width="1280" height="720"></canvas>
+        <div class="canvas-radial-vignette"></div>
+      </div>
+
+      <!-- Story Narrative Overlays -->
+      <div class="narrative-container">
+
+        <!-- Chapter 1: The Damascus Origin (Frames 0 - 55) -->
+        <div class="chapter-card" id="chapter1" data-frame-start="0" data-frame-end="55">
+          <div class="chapter-pill">
+            <span class="pill-dot"></span>
+            <span>01 — DAWN HARVEST</span>
+          </div>
+          <h1 class="chapter-title">A Pure Botanical <br><span class="highlight-serif">Romance</span></h1>
+          <p class="chapter-desc">
+            Hand-picked Damascus rose petals harvested at first morning light, distilled at low temperatures to capture
+            the delicate, velvety floral soul.
+          </p>
+          <div class="chapter-tags">
+            <span class="tag"><i class="fa-solid fa-check"></i> 100% Organic Damask Rose</span>
+            <span class="tag"><i class="fa-solid fa-snowflake"></i> Cold-Infused</span>
+          </div>
+
+        </div>
+
+        <!-- Chapter 2: The Slow Pour & Infusion (Frames 56 - 135) -->
+        <div class="chapter-card" id="chapter2" data-frame-start="56" data-frame-end="135">
+          <div class="chapter-pill">
+            <span class="pill-dot"></span>
+            <span>02 — SLOW INFUSION</span>
+          </div>
+          <h2 class="chapter-title">Velvet Meets <br><span class="highlight-serif">Floral Nectar</span></h2>
+          <p class="chapter-desc">
+            Pasture-raised A2 heritage milk blends seamlessly with concentrated rose distillate, creating an alluring
+            natural blush and an unforgettable silky texture.
+          </p>
+          <div class="feature-metrics">
+            <div class="metric-box">
+              <span class="metric-val">24<small>HRS</small></span>
+              <span class="metric-lbl">Slow Steeping</span>
+            </div>
+            <div class="metric-box">
+              <span class="metric-val">0<small>%</small></span>
+              <span class="metric-lbl">Artificial Dyes</span>
+            </div>
+            <div class="metric-box">
+              <span class="metric-val">100<small>%</small></span>
+              <span class="metric-lbl">Natural Blush</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chapter 3: Bottled in Heritage Glass (Frames 136 - 215) -->
+        <div class="chapter-card" id="chapter3" data-frame-start="136" data-frame-end="215">
+          <div class="chapter-pill">
+            <span class="pill-dot"></span>
+            <span>03 — BOTTLING PERFECTION</span>
+          </div>
+          <h2 class="chapter-title">Vintage Glass <br><span class="highlight-serif">Craftsmanship</span></h2>
+          <p class="chapter-desc">
+            Sealed in eco-friendly vintage glass bottles to preserve crisp freshness, delicate aromatic volatiles, and
+            unmatched chill retention.
+          </p>
+          <div class="spec-list">
+            <div class="spec-item">
+              <i class="fa-solid fa-droplet"></i>
+              <div>
+                <strong>Aroma Locked</strong>
+                <span>Hermetic freshness seal</span>
+              </div>
+            </div>
+            <div class="spec-item">
+              <i class="fa-solid fa-recycle"></i>
+              <div>
+                <strong>Infinite Glass</strong>
+                <span>100% Recyclable apothecary bottle</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chapter 4: The Velvet Splash (Frames 216 - 300) -->
+        <div class="chapter-card" id="chapter4" data-frame-start="216" data-frame-end="300">
+          <div class="chapter-pill">
+            <span class="pill-dot"></span>
+            <span>04 — THE CLIMAX</span>
+          </div>
+          <h2 class="chapter-title">An Explosion of <br><span class="highlight-serif">Pure Velvet</span></h2>
+          <p class="chapter-desc">
+            A sensorial symphony of subtle sweetness, intoxicating rose perfume, and creamy richness that elevates
+            everyday refreshment to high art.
+          </p>
+          <div class="flavor-pills">
+            <span class="flavor-badge">🌸 Wild Damask Rose</span>
+            <span class="flavor-badge">🍯 Wildflower Honey</span>
+            <span class="flavor-badge">✨ Cardamom Kiss</span>
+          </div>
+          <div class="chapter-cta-wrap">
+            <button id="replayBtn" class="btn-luxe">
+              <span>Replay Experience</span>
+              <i class="fa-solid fa-arrow-rotate-left"></i>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Section 1: Brand Introduction ("Milk, Reimagined.") -->
+  <section id="about" class="py-section-gap bg-background relative z-30">
+    <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+        <div class="md:col-span-4 md:col-start-2 space-y-6 animate-fade-in-up">
+          <h2 class="font-headline-md md:font-display-lg text-primary">
+            Milk, <br><span class="italic text-on-surface">Reimagined.</span>
+          </h2>
+          <p class="font-body-lg text-on-surface-variant">
+            Not just milk. A smooth, velvety experience inspired by the timeless beauty of roses. Crafted for those who
+            seek elegance in the everyday.
+          </p>
+        </div>
+        <div class="md:col-span-5 md:col-start-7 mt-12 md:mt-0 flex flex-col gap-8 animate-fade-in-up delay-200">
+          <div class="flex gap-4 items-start group">
+            <div
+              class="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+              <span class="material-symbols-outlined text-primary" data-icon="water_drop">water_drop</span>
+            </div>
+            <div>
+              <h3 class="font-headline-sm text-on-surface mb-2">Velvety &amp; Creamy</h3>
+              <p class="font-body-md text-on-surface-variant">Smooth, rich texture designed for an indulgent everyday
+                experience.</p>
+            </div>
+          </div>
+          <div class="flex gap-4 items-start group">
+            <div
+              class="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+              <span class="material-symbols-outlined text-primary" data-icon="local_florist">local_florist</span>
+            </div>
+            <div>
+              <h3 class="font-headline-sm text-on-surface mb-2">Delicately Rose-Infused</h3>
+              <p class="font-body-md text-on-surface-variant">A subtle floral character inspired by freshly bloomed rose
+                petals.</p>
+            </div>
+          </div>
+          <div class="flex gap-4 items-start group">
+            <div
+              class="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
+              <span class="material-symbols-outlined text-primary" data-icon="self_improvement">self_improvement</span>
+            </div>
+            <div>
+              <h3 class="font-headline-sm text-on-surface mb-2">Made for Moments</h3>
+              <p class="font-body-md text-on-surface-variant">Perfect for slow mornings, evening rituals, and little
+                moments of luxury.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: Product Feature (Shoppable) -->
+  <section id="product"
+    class="py-section-gap bg-surface-container-low border-y border-outline-variant/20 relative z-30">
+    <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+        <!-- Product Image Area -->
+        <div
+          class="relative flex justify-center bg-white rounded-xl p-12 shadow-[0_12px_32px_rgba(107,44,51,0.04)] border border-primary-container/30 animate-fade-in-up">
+          <div class="absolute top-4 left-4">
+            <span
+              class="inline-block px-3 py-1 rounded-full bg-primary-fixed text-primary font-label-sm uppercase tracking-widest">Signature
+              Blend</span>
+          </div>
+          <img alt="Rose Petal Milk Bottle on clean white background"
+            class="w-full max-w-[400px] object-contain hover:-translate-y-2 transition-transform duration-500"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWVGhpwx8Rus_kJuj7dHLchfbN5GwzFQDLEyeAqmhuG26g4wbUjDY7aA4zHQOvwYDdWyToUy0AFCHKaU9q7h4gXqjV-1tUZ2Sw942gqYUXd0j9USkpFkcCfaDliJLFGfV7JmroM_2yb1SNERHMkCiZlucYf_fwrYMEPqhEbTXHc10tOBv1bbHU4efmdYF91xgNN9NQqkKutHCAXs178yvlKtNZBTxTagpvJjsbmYgSHELqtv_-ZWomNg79DVfaqLTgdA">
+        </div>
+        <!-- Product Details -->
+        <div class="space-y-8 animate-fade-in-up">
+          <div>
+            <h2 class="font-display-lg-mobile md:font-display-lg text-on-surface mb-2">Meet Your New Favorite Ritual.
+            </h2>
+            <div class="font-headline-md text-primary mt-4">₹249 <span
+                class="text-body-md text-on-surface-variant font-normal">/ 500ml Bottle</span></div>
+          </div>
+          <p class="font-body-lg text-on-surface-variant">
+            Experience the delicate harmony of premium creamy milk and the subtle, romantic notes of natural rose
+            extract. Best served chilled or gently warmed for a soothing nightcap.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 pt-4 border-t border-outline-variant/30">
+            <!-- Quantity Selector -->
+            <div class="flex items-center border border-outline-variant rounded-md overflow-hidden bg-white">
+              <button id="qtyDecBtn"
+                class="px-4 py-3 hover:bg-surface-variant transition-colors text-on-surface-variant">
+                <span class="material-symbols-outlined text-sm" data-icon="remove">remove</span>
+              </button>
+              <span id="qtyVal" class="px-4 py-3 font-label-sm w-12 text-center text-on-surface">1</span>
+              <button id="qtyIncBtn"
+                class="px-4 py-3 hover:bg-surface-variant transition-colors text-on-surface-variant">
+                <span class="material-symbols-outlined text-sm" data-icon="add">add</span>
+              </button>
+            </div>
+            <button id="addToCartBtn" class="flex-1 liquid-glass-btn-secondary">
+              Add to Cart
+            </button>
+            <button id="buyNowBtn" class="flex-1 liquid-glass-btn-primary">
+              Buy Now
+            </button>
+          </div>
+          <div class="flex items-center gap-6 pt-4 text-sm text-on-surface-variant">
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-primary text-[20px]"
+                data-icon="local_shipping">local_shipping</span>
+              <span>Free Delivery on orders over ₹999</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="material-symbols-outlined text-primary text-[20px]" data-icon="lock">lock</span>
+              <span>Secure Checkout</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: Experience / Lifestyle Bento Grid -->
+  <section id="experience-lifestyle" class="py-section-gap bg-background relative z-30">
+    <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop text-center mb-16">
+      <h2 class="font-headline-md md:font-display-lg text-primary mb-4">Sip. Slow Down. <span
+          class="italic text-on-surface">Savour.</span></h2>
+      <p class="font-body-lg text-on-surface-variant max-w-2xl mx-auto">Elevate your daily routines into moments of pure
+        indulgence.</p>
+    </div>
+    <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-gutter h-auto md:h-[600px]">
+        <!-- Large Card -->
+        <div class="md:col-span-8 relative rounded-xl overflow-hidden group min-h-[400px] animate-fade-in-up">
+          <div
+            class="absolute inset-0 bg-cover bg-center w-full h-full group-hover:scale-105 transition-transform duration-1000"
+            data-alt="A minimalist, bright lifestyle photograph of a person holding a glass of pink milk in a sunlit white bedroom."
+            style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBAwWEMER9VCsleclLMiFSUckVdwXYQbZBUk285ta32AzocTO0RA3ScRNwjMM1Iqnmfhp76VqKIZf5TQW7SWmJz2q0p0vgvBIYl19QikAfW1HtkMy9YY55X24ABiDUwwmRc9pPGOOKyH3cE_vWLjy47QUoiVzft5iCD_dhcFQz8gotOja5-y8g9VOJwIUVoGRJ-yvwdAOgDgdgSkxl-NKF7xJhEvJ5xf__pawqk7qJgekGaKX48VJIF')">
+          </div>
+          <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+          <div class="absolute bottom-0 left-0 p-8">
+            <span
+              class="inline-block px-3 py-1 rounded-full bg-white/20 backdrop-blur-md text-white font-label-sm uppercase tracking-widest mb-3">Morning
+              Ritual</span>
+            <h3 class="font-headline-md text-white">Start With Softness</h3>
+          </div>
+        </div>
+        <!-- Stacked Cards -->
+        <div class="md:col-span-4 flex flex-col gap-gutter animate-fade-in-up">
+          <div class="flex-1 relative rounded-xl overflow-hidden group min-h-[250px]">
+            <div
+              class="absolute inset-0 bg-cover bg-center w-full h-full group-hover:scale-105 transition-transform duration-1000"
+              data-alt="A close-up shot of a delicate porcelain cup filled with rose petal milk on a marble table."
+              style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCe59jDadeJRG2o8sgpgcMxbk8sPumZdOo5STeRc_bZ-aBuJbrS3j4w7BmP6ngtdII6vsR57nNRHYFH1LzxPaFFQBZ5qAjlllwrLQk93wK3DmcyD1MOLkzGLWMvrQ5w7gc5bI-NUyaS7fY8euUrhlcSgakxofCoi2E21DZB69EcJG9jvJ8tNW0fld1uB7PVD434p-Cvxg2FtFQCXKqMlOMtj_PzljQqiRlS4ikwtbjLplst4ziiUgmq')">
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+            <div class="absolute bottom-0 left-0 p-6">
+              <span
+                class="inline-block px-3 py-1 rounded-full bg-white/20 backdrop-blur-md text-white font-label-sm uppercase tracking-widest mb-2 text-[10px]">Afternoon
+                Indulgence</span>
+              <h3 class="font-headline-sm text-white">A Moment of Calm</h3>
+            </div>
+          </div>
+          <div
+            class="flex-1 relative rounded-xl overflow-hidden group min-h-[250px] bg-primary-container p-8 flex flex-col justify-center">
+            <span class="material-symbols-outlined text-primary mb-4 text-4xl"
+              data-icon="nights_stay">nights_stay</span>
+            <h3 class="font-headline-sm text-on-primary-container mb-2">Evening Treat</h3>
+            <p class="font-body-md text-on-primary-container/80">Warm it up for a soothing, floral nightcap that
+              prepares you for rest.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: Ingredients ("Simple Ingredients. Beautifully Balanced.") -->
+  <section id="ingredients" class="py-section-gap bg-surface-container relative z-30">
+    <div class="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
+      <div class="text-center mb-16">
+        <h2 class="font-headline-md md:font-display-lg text-on-surface mb-4">Simple Ingredients.<br><span
+            class="italic text-primary">Beautifully Balanced.</span></h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+        <!-- Card 1 -->
+        <div
+          class="bg-white p-10 rounded-xl shadow-[0_4px_24px_rgba(107,44,51,0.03)] border border-outline-variant/20 text-center hover:-translate-y-2 transition-transform duration-500 animate-fade-in-up">
+          <div class="w-16 h-16 mx-auto rounded-full bg-secondary-fixed/50 flex items-center justify-center mb-6">
+            <span class="material-symbols-outlined text-primary text-3xl" data-icon="cruelty_free">cruelty_free</span>
+          </div>
+          <h3 class="font-headline-sm text-on-surface mb-3">Creamy Milk</h3>
+          <p class="font-body-md text-on-surface-variant">Sourced responsibly to provide the richest, smoothest base for
+            our delicate floral infusion.</p>
+        </div>
+        <!-- Card 2 -->
+        <div
+          class="bg-white p-10 rounded-xl shadow-[0_4px_24px_rgba(107,44,51,0.03)] border border-outline-variant/20 text-center hover:-translate-y-2 transition-transform duration-500 delay-100 animate-fade-in-up">
+          <div class="w-16 h-16 mx-auto rounded-full bg-secondary-fixed/50 flex items-center justify-center mb-6">
+            <span class="material-symbols-outlined text-primary text-3xl" data-icon="spa">spa</span>
+          </div>
+          <h3 class="font-headline-sm text-on-surface mb-3">Rose Petals</h3>
+          <p class="font-body-md text-on-surface-variant">Real essence extracted from hand-picked roses for an
+            authentic, understated aroma.</p>
+        </div>
+        <!-- Card 3 -->
+        <div
+          class="bg-white p-10 rounded-xl shadow-[0_4px_24px_rgba(107,44,51,0.03)] border border-outline-variant/20 text-center hover:-translate-y-2 transition-transform duration-500 delay-200 animate-fade-in-up">
+          <div class="w-16 h-16 mx-auto rounded-full bg-secondary-fixed/50 flex items-center justify-center mb-6">
+            <span class="material-symbols-outlined text-primary text-3xl" data-icon="eco">eco</span>
+          </div>
+          <h3 class="font-headline-sm text-on-surface mb-3">Natural Flavor</h3>
+          <p class="font-body-md text-on-surface-variant">No artificial syrups. Just subtle, clean ingredients that let
+            the natural beauty shine through.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: Final CTA Section -->
+  <section class="relative py-section-gap overflow-hidden bg-primary text-white text-center relative z-30">
+    <div class="absolute inset-0 opacity-10 pointer-events-none"
+      style="background-image: radial-gradient(circle at center, #fff 1px, transparent 1px); background-size: 40px 40px;">
+    </div>
+    <div
+      class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-white/5 rounded-full blur-[100px] pointer-events-none">
+    </div>
+    <div class="relative z-10 max-w-2xl mx-auto px-margin-mobile">
+      <h2 class="font-display-lg-mobile md:font-display-lg mb-8">Make Every Sip <i class="font-serif italic">Feel
+          Special.</i></h2>
+      <p class="font-body-lg text-primary-fixed-dim mb-10">Treat yourself or someone you love to the velvet touch of
+        Rose Petal Milk.</p>
+      <a href="#product"
+        class="inline-block liquid-glass-btn-primary px-10 py-4 font-label-sm tracking-widest shadow-lg">
+        Shop The Collection
+      </a>
+    </div>
+  </section>
+
+  <!-- Section 6: Footer -->
+  <footer
+    class="w-full pt-section-gap pb-12 bg-surface-container-highest dark:bg-surface-container-lowest border-t bg-surface-container-high dark:bg-surface-dim relative z-30">
+    <div
+      class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+      <!-- Brand Column -->
+      <div class="md:col-span-1 space-y-6">
+        <div class="font-display-lg text-headline-md text-primary tracking-widest">
+          ROSE PETAL MILK
+        </div>
+        <p class="font-body-md text-on-surface-variant max-w-xs">
+          A little luxury in every sip. Crafted for the modern romantic.
+        </p>
+        <div class="flex space-x-4 pt-2">
+          <a class="text-on-surface-variant hover:text-primary transition-colors opacity-100 hover:opacity-80 transition-opacity"
+            href="#">
+            <span class="material-symbols-outlined" data-icon="camera">camera</span>
+          </a>
+          <a class="text-on-surface-variant hover:text-primary transition-colors opacity-100 hover:opacity-80 transition-opacity"
+            href="#">
+            <span class="material-symbols-outlined" data-icon="mail">mail</span>
+          </a>
+        </div>
+      </div>
+      <!-- Spacer for layout -->
+      <div class="hidden md:block md:col-span-1"></div>
+      <!-- Links Column 1 -->
+      <div class="md:col-span-1 space-y-4">
+        <h4 class="font-label-sm uppercase tracking-widest text-on-surface mb-6">Shop</h4>
+        <ul class="space-y-3 font-body-md text-body-md">
+          <li><a
+              class="text-on-surface-variant hover:text-primary transition-colors hover:underline decoration-primary/30 underline-offset-4"
+              href="#product">Rose Petal Milk (₹249)</a></li>
+          <li><a
+              class="text-on-surface-variant hover:text-primary transition-colors hover:underline decoration-primary/30 underline-offset-4"
+              href="#experience">The Experience</a></li>
+          <li><a
+              class="text-on-surface-variant hover:text-primary transition-colors hover:underline decoration-primary/30 underline-offset-4"
+              href="#about">About Our Blend</a></li>
+        </ul>
+      </div>
+      <!-- Links Column 2 -->
+      <div class="md:col-span-1 space-y-4">
+        <h4 class="font-label-sm uppercase tracking-widest text-on-surface mb-6">Support</h4>
+        <ul class="space-y-3 font-body-md text-body-md">
+          <li><a
+              class="text-on-surface-variant hover:text-primary transition-colors hover:underline decoration-primary/30 underline-offset-4"
+              href="#">Privacy Policy</a></li>
+          <li><a
+              class="text-on-surface-variant hover:text-primary underline-offset-4 hover:underline decoration-primary/30 underline-offset-4"
+              href="#">Terms of Service</a></li>
+          <li><a
+              class="text-on-surface-variant hover:text-primary transition-colors hover:underline decoration-primary/30 underline-offset-4"
+              href="#">Shipping &amp; Returns</a></li>
+          <li><a
+              class="text-on-surface-variant hover:text-primary transition-colors hover:underline decoration-primary/30 underline-offset-4"
+              href="#">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div
+      class="mt-16 pt-8 border-t border-outline-variant/30 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto text-center md:text-left">
+      <p class="font-label-sm text-on-surface-variant tracking-widest text-xs">
+        © 2026 ROSE PETAL MILK. ALL RIGHTS RESERVED.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Toast Notification System -->
+  <div id="toastNotification" class="toast-container">
+    <div class="toast-box">
+      <i class="fa-solid fa-circle-check toast-icon"></i>
+      <span id="toastMessage" class="toast-msg">Ready</span>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+  <script>
+    // Product Section Quantity & Actions
+    let qty = 1;
+    const qtyVal = document.getElementById('qtyVal');
+    const qtyDecBtn = document.getElementById('qtyDecBtn');
+    const qtyIncBtn = document.getElementById('qtyIncBtn');
+    const addToCartBtn = document.getElementById('addToCartBtn');
+    const buyNowBtn = document.getElementById('buyNowBtn');
+
+    if (qtyIncBtn) {
+      qtyIncBtn.addEventListener('click', () => {
+        qty++;
+        if (qtyVal) qtyVal.textContent = qty;
+      });
+    }
+    if (qtyDecBtn) {
+      qtyDecBtn.addEventListener('click', () => {
+        if (qty > 1) {
+          qty--;
+          if (qtyVal) qtyVal.textContent = qty;
+        }
+      });
+    }
+    if (addToCartBtn) {
+      addToCartBtn.addEventListener('click', () => {
+        const toast = document.getElementById('toastNotification');
+        const msg = document.getElementById('toastMessage');
+        if (msg) msg.textContent = `Added ${qty} Bottle${qty > 1 ? 's' : ''} to Cart!`;
+        if (toast) {
+          const box = toast.querySelector('.toast-box');
+          if (box) {
+            box.classList.add('show');
+            setTimeout(() => box.classList.remove('show'), 2400);
+          }
+        }
+      });
+    }
+    if (buyNowBtn) {
+      buyNowBtn.addEventListener('click', () => {
+        alert(`Proceeding to checkout with ${qty} Bottle${qty > 1 ? 's' : ''} of Rose Petal Milk (Total: ₹${qty * 249})`);
+      });
+    }
+
+    // Scroll Animation Observer for sections
+    document.addEventListener('DOMContentLoaded', () => {
+      const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+      };
+
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-fade-in-up');
+            entry.target.style.opacity = '1';
+            obs.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll('section > div > div > div:not(.animate-fade-in-up)').forEach(el => {
+        el.style.opacity = '0';
+        observer.observe(el);
+      });
+    });
+  </script>
+  <!--Chat Bot-->
+  <script type="module" defer>
+    import n8nChatUiWidget from 'https://proxy.n8nchatui.com/api/embed/i8HGBF';
+    n8nChatUiWidget.load();
+  </script>
+</body>
+
+</html>
